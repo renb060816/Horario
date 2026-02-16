@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Horario Pro Tec - Brayan</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-icon" href="https://cdn-icons-png.flaticon.com/512/2693/2693507.png">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <h2 id="app-title">Horario Tec</h2>
+            <div class="header-actions">
+                <button id="dark-mode-toggle" onclick="toggleDarkMode()">🌙</button>
+                <div id="status-badge" class="badge">Iniciando...</div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div id="exam-alert-widget"></div>
+
+        <section id="section-horario" class="app-section active">
+            <div class="user-greeting">
+                <div class="user-info">
+                    <h1>Hola, <span id="user-name">Brayan</span></h1>
+                    <div id="digital-clock" class="clock-style">00:00:00</div>
+                    <p id="current-date-text"></p>
+                </div>
+                <div class="logout-icon" onclick="cambiarNombre()">🔄</div>
+            </div>
+
+            <div class="days-selector">
+                <button class="btn-day" onclick="verDia(1)">L</button>
+                <button class="btn-day" onclick="verDia(2)">M</button>
+                <button class="btn-day" onclick="verDia(3)">M</button>
+                <button class="btn-day" onclick="verDia(4)">J</button>
+                <button class="btn-day" onclick="verDia(5)">V</button>
+            </div>
+            <h2 id="day-title" class="day-header"></h2>
+            <div id="schedule-container"></div>
+        </section>
+
+        <section id="section-tareas" class="app-section">
+            <div class="add-box-vertical">
+                <input type="text" id="input-tarea" placeholder="¿Qué tarea tienes?">
+                <div class="row">
+                    <input type="date" id="fecha-tarea">
+                    <button onclick="agregarTarea()">+</button>
+                </div>
+            </div>
+            <div id="lista-tareas"></div>
+        </section>
+
+        <section id="section-sumativas" class="app-section">
+            <div class="add-box-vertical">
+                <select id="select-materia-sumativa">
+                    <option value="Programación">Programación</option>
+                    <option value="Contabilidad">Contabilidad</option>
+                    <option value="Telecomunicaciones">Telecomunicaciones</option>
+                    <option value="Cálculo">Cálculo</option>
+                    <option value="Administración">Administración</option>
+                    <option value="Matemáticas Disc.">Matemáticas Disc.</option>
+                    <option value="Física">Física</option>
+                </select>
+                <div class="row">
+                    <input type="text" id="input-unidad-sumativa" placeholder="Unidad" style="width: 80px;">
+                    <input type="number" id="input-nota-sumativa" placeholder="Calif" style="width: 70px;">
+                    <input type="date" id="fecha-sumativa">
+                    <button onclick="agregarSumativa()">+</button>
+                </div>
+            </div>
+            <div id="lista-sumativas"></div>
+        </section>
+
+        <section id="section-notas" class="app-section">
+            <div class="add-box">
+                <textarea id="input-nota" placeholder="Escribe un apunte rápido..."></textarea>
+                <button onclick="agregarNota()">+</button>
+            </div>
+            <div id="lista-notas"></div>
+        </section>
+    </main>
+
+    <nav class="bottom-nav">
+        <div class="nav-item active" onclick="cambiarSeccion('horario', this)">
+            <span class="nav-icon">📅</span><span class="nav-text">Horario</span>
+        </div>
+        <div class="nav-item" onclick="cambiarSeccion('tareas', this)">
+            <span class="nav-icon">✅</span><span class="nav-text">Tareas</span>
+        </div>
+        <div class="nav-item" onclick="cambiarSeccion('sumativas', this)">
+            <span class="nav-icon">📈</span><span class="nav-text">Sumativas</span>
+        </div>
+        <div class="nav-item" onclick="cambiarSeccion('notas', this)">
+            <span class="nav-icon">📝</span><span class="nav-text">Notas</span>
+        </div>
+    </nav>
+    <script src="script.js"></script>
+</body>
+</html>
