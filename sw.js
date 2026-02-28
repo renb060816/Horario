@@ -1,4 +1,4 @@
-const cacheName = 'brayan-tec-v1';
+const cacheName = 'brayan-tec-v2';
 const assets = [
   './',
   './index.html',

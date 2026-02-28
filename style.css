@@ -43,3 +43,89 @@ button { background: var(--primary); color: white; border: none; padding: 10px 1
 
 .exam-alert { background: #ffeaa7; color: #d35400; padding: 15px; border-radius: 12px; margin-bottom: 15px; border-left: 6px solid #f39c12; }
 body.dark .exam-alert { background: #2d3436; color: #fab1a0; }
+/* Ajustes para que las notas se vean alineadas */
+.add-box-vertical .input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.add-box-vertical .input-group input, 
+.add-box-vertical .input-group select {
+    flex: 1; /* Hace que midan lo mismo */
+}
+
+#input-nota-texto {
+    width: 100%;
+    min-height: 120px;
+    resize: none; /* Quita el triangulito feo de la esquina */
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    font-family: inherit;
+    box-sizing: border-box; /* Evita que se salga del borde */
+}
+
+.btn-guardar {
+    width: 100%;
+    margin-top: 10px;
+    padding: 12px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* --- ÚLTIMOS AJUSTES ESTÉTICOS PARA NOTAS --- */
+
+.add-box-vertical .input-group {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.add-box-vertical .input-group input, 
+.add-box-vertical .input-group select {
+    flex: 1;
+    height: 45px; /* Altura uniforme */
+}
+
+#input-nota-texto {
+    width: 100%;
+    min-height: 120px;
+    resize: none;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    font-family: inherit;
+    box-sizing: border-box;
+    background: var(--bg);
+    color: var(--text);
+}
+
+.btn-guardar {
+    width: 100%;
+    margin-top: 10px;
+    padding: 14px;
+    background: #6a0dad; /* Púrpura como en tu imagen */
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.btn-guardar:active {
+    opacity: 0.8;
+}
+
+/* Ajuste para celulares pequeños */
+@media (max-width: 480px) {
+    .add-box-vertical .input-group {
+        flex-direction: column;
+    }
+}
