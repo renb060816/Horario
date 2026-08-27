@@ -1,10 +1,74 @@
+
 const horarioData = {
-    1: [ { id: "L1", nombre: "Admón. de Recursos", inicio: "05:50 PM", fin: "07:30 PM", profe: "Edna Marcela" }, { id: "L2", nombre: "Matemáticas Discretas", inicio: "07:40 PM", fin: "09:20 PM", profe: "Héctor Hernández" }, { id: "L3", nombre: "Física para Informática", inicio: "09:20 PM", fin: "10:10 PM", profe: "César Alberto" } ],
-    2: [ { id: "M1", nombre: "Telecomunicaciones", inicio: "10:40 AM", fin: "12:30 PM", profe: "Javier Martinez" }, { id: "M2", nombre: "Cálculo Integral", inicio: "01:20 PM", fin: "02:00 PM", profe: "Adriana Hernandez" }, { id: "M3", nombre: "Admón. de Recursos", inicio: "05:50 PM", fin: "07:30 PM", profe: "Edna Marcela" }, { id: "M4", nombre: "Matemáticas Discretas", inicio: "07:40 PM", fin: "09:20 PM", profe: "Héctor Hernández" }, { id: "M5", nombre: "Tutoría", inicio: "09:20 PM", fin: "10:10 PM", profe: "Héctor Hernández" } ],
-    3: [ { id: "W1", nombre: "Cálculo Integral", inicio: "07:00 AM", fin: "07:50 AM", profe: "Adriana Hernandez" }, { id: "W2", nombre: "P. Orientada a Objetos", inicio: "05:50 PM", fin: "07:30 PM", profe: "Victor Alfonso" }, { id: "W3", nombre: "Matemáticas Discretas", inicio: "07:40 PM", fin: "08:30 PM", profe: "Héctor Hernández" }, { id: "W4", nombre: "Física para Informática", inicio: "08:30 PM", fin: "10:10 PM", profe: "César Alberto" } ],
-    4: [ { id: "J1", nombre: "Cálculo Integral", inicio: "10:40 AM", fin: "12:20 PM", profe: "Adriana Hernandez" }, { id: "J2", nombre: "P. Orientada a Objetos", inicio: "05:50 PM", fin: "07:30 PM", profe: "Victor Alfonso" }, { id: "J3", nombre: "Contabilidad Financiera", inicio: "07:40 PM", fin: "09:20 PM", profe: "Jairo Cristopher" } ],
-    5: [ { id: "V1", nombre: "Cálculo Integral", inicio: "09:30 AM", fin: "10:20 AM", profe: "Adriana Hernandez" }, { id: "V2", nombre: "Telecomunicaciones", inicio: "12:20 PM", fin: "02:00 PM", profe: "Javier Martinez" }, { id: "V3", nombre: "Contabilidad Financiera", inicio: "05:00 PM", fin: "06:40 PM", profe: "Jairo Cristopher" }, { id: "V4", nombre: "P. Orientada a Objetos", inicio: "06:40 PM", fin: "07:30 PM", profe: "Victor Alfonso" }, { id: "V5", nombre: "Física para Informática", inicio: "07:30 PM", fin: "09:20 PM", profe: "César Alberto" } ]
+    1: [ 
+        { id: "L1", nombre: "Redes de computadoras", inicio: "08:40 AM", fin: "10:20 PM", profe: "Javier marlequin" },
+        { id: "L2", nombre: "Ingles", inicio: "04:00 PM", fin: "05:30 PM", profe: "Nelly Villareal" },
+        { id: "L3", nombre: "F sistemas de informacion", inicio: "07:10 PM", fin: "08:40 PM", profe: "Homero zertuche" }, 
+        { id: "L4", nombre: "Costos Empresariales", inicio: "08:40 PM", fin: "09:25 PM", profe: "Jairo Cristopher" }, 
+       
+    ],
+    2: [ 
+        { id: "M1", nombre: "Taller de leg info", inicio: "07:50 AM", fin: "09:30 AM", profe: "Carmina" },
+        { id: "M2", nombre: "Redes de computadoras", inicio: "09:30 AM", fin: "10:20 AM", profe: "Javier marlequin" },
+        { id: "M3", nombre: "F Bases de datos", inicio: "10:40 AM", fin: "01:10 PM", profe: "Ruben Riojas" },
+        { id: "M4", nombre: "F sistemas de informacion", inicio: "07:10 PM", fin: "08:40 PM", profe: "Homero zertuche" }, 
+         
+    ],
+    3: [ 
+        { id: "W1", nombre: "F Bases de datos", inicio: "12:20 PM", fin: "02:00 PM", profe: "Ruben Riojas" },
+        { id: "W2", nombre: "Costos Empresariales", inicio: "05:30 PM", fin: "07:00 PM", profe: "Jairo Cristopher" }, 
+        { id: "W3", nombre: "Estructuras de Datos", inicio: "07:10 PM", fin: "07:55 PM", profe: "Nuevo 2" }, 
+        
+    ],
+    4: [ 
+        { id: "J1",nombre: "Ingles", inicio: "04:00 PM", fin: "05:30 PM", profe: "Nelly Villareal" }, 
+        { id: "J2", nombre: "Estructuras de Datos", inicio: "07:55 PM", fin: "09:25 PM", profe: "Nuevo 2" }, 
+        { id: "J3", nombre: "Tutoría", inicio: "09:25 PM", fin: "10:10 PM", profe: "cesar alberto" } 
+    ],
+    5: [ 
+        { id: "V1", nombre: "Taller de leg info", inicio: "07:50 AM", fin: "08:40 AM", profe: "Carmina" },
+        { id: "V2", nombre: "Redes de computadoras", inicio: "08:40 AM", fin: "10:20 AM", profe: "Javier marlequin" },
+        { id: "V3", nombre: "Costos Empresariales", inicio: "06:15 PM", fin: "07:00 PM", profe: "Jairo Cristopher" }, 
+        { id: "V4",  nombre: "Estructuras de Datos", inicio: "07:55 PM", fin: "09:25 PM", profe: "Nuevo 2" }, 
+         
+    ]
 };
+
+function obtenerMateriasUnicas() {
+    const materiasSet = new Set();
+    Object.values(horarioData).forEach(dia => {
+        dia.forEach(clase => materiasSet.add(clase.nombre));
+    });
+    return Array.from(materiasSet).sort();
+}
+
+function cargarSelectsMaterias() {
+    const materias = obtenerMateriasUnicas();
+    
+    const selectIds = [
+        'select-nota-materia', 
+        'select-falta-materia', 
+        'select-examen-materia',
+        'select-tarea-materia'
+    ];
+
+    selectIds.forEach(id => {
+        const selectElem = document.getElementById(id);
+        if (selectElem) {
+            selectElem.innerHTML = '<option value="General">General</option>';
+            materias.forEach(materia => {
+                const option = document.createElement('option');
+                option.value = materia;
+                option.textContent = materia;
+                selectElem.appendChild(option);
+            });
+        }
+    });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    cargarSelectsMaterias();
+});
 
 let diaVisual = new Date().getDay();
 if(diaVisual === 0 || diaVisual === 6) diaVisual = 1;

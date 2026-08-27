@@ -57,15 +57,8 @@
 
         <section id="section-sumativas" class="app-section">
             <div class="add-box-vertical">
-                <select id="select-materia-sumativa">
-                    <option value="Programación">Programación</option>
-                    <option value="Contabilidad">Contabilidad</option>
-                    <option value="Telecomunicaciones">Telecomunicaciones</option>
-                    <option value="Cálculo">Cálculo</option>
-                    <option value="Administración">Administración</option>
-                    <option value="Matemáticas Disc.">Matemáticas Disc.</option>
-                    <option value="Física">Física</option>
-                </select>
+                <!-- Se poblará automáticamente mediante JavaScript -->
+                <select id="select-materia-sumativa"></select>
                 <div class="row">
                     <input type="text" id="input-unidad-sumativa" placeholder="Unidad" style="width: 80px;">
                     <input type="number" id="input-nota-sumativa" placeholder="Calif" style="width: 70px;">
@@ -77,25 +70,17 @@
         </section>
 
         <section id="section-notas" class="app-section">
-    <div class="add-box-vertical">
-        <div class="input-group">
-            <input type="text" id="input-nota-titulo" placeholder="Título de la nota">
-            <select id="select-nota-materia">
-                <option value="General">General</option>
-                <option value="Programación">Programación</option>
-                <option value="Contabilidad">Contabilidad</option>
-                <option value="Telecomunicaciones">Telecomunicaciones</option>
-                <option value="Cálculo">Cálculo</option>
-                <option value="Administración">Administración</option>
-                <option value="Matemáticas Disc.">Matemáticas Disc.</option>
-                <option value="Física">Física</option>
-            </select>
-        </div>
-        <textarea id="input-nota-texto" placeholder="Escribe el contenido aquí..."></textarea>
-        <button onclick="agregarNota()" class="btn-guardar">Guardar Nota</button>
-    </div>
-    <div id="lista-notas"></div>
-</section>
+            <div class="add-box-vertical">
+                <div class="input-group">
+                    <input type="text" id="input-nota-titulo" placeholder="Título de la nota">
+                    <!-- Se poblará automáticamente mediante JavaScript -->
+                    <select id="select-nota-materia"></select>
+                </div>
+                <textarea id="input-nota-texto" placeholder="Escribe el contenido aquí..."></textarea>
+                <button onclick="agregarNota()" class="btn-guardar">Guardar Nota</button>
+            </div>
+            <div id="lista-notas"></div>
+        </section>
     </main>
 
     <nav class="bottom-nav">
