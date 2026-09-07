@@ -8,10 +8,9 @@ const horarioData = {
        
     ],
     2: [ 
-        { id: "M1", nombre: "Taller de leg info", inicio: "07:50 AM", fin: "09:30 AM", profe: "Carmina" },
-        { id: "M2", nombre: "Redes de computadoras", inicio: "09:30 AM", fin: "10:20 AM", profe: "Javier marlequin" },
-        { id: "M3", nombre: "F Bases de datos", inicio: "10:40 AM", fin: "01:10 PM", profe: "Ruben Riojas" },
-        { id: "M4", nombre: "F sistemas de informacion", inicio: "07:10 PM", fin: "08:40 PM", profe: "Homero zertuche" }, 
+        { id: "M1", nombre: "Redes de computadoras", inicio: "09:30 AM", fin: "10:20 AM", profe: "Javier marlequin" },
+        { id: "M2", nombre: "F Bases de datos", inicio: "10:40 AM", fin: "01:10 PM", profe: "Ruben Riojas" },
+        { id: "M3", nombre: "F sistemas de informacion", inicio: "07:10 PM", fin: "08:40 PM", profe: "Homero zertuche" }, 
          
     ],
     3: [ 
@@ -21,15 +20,16 @@ const horarioData = {
         
     ],
     4: [ 
-        { id: "J1",nombre: "Ingles", inicio: "04:00 PM", fin: "05:30 PM", profe: "Nelly Villareal" }, 
-        { id: "J2", nombre: "Estructuras de Datos", inicio: "07:55 PM", fin: "09:25 PM", profe: "Nuevo 2" }, 
-        { id: "J3", nombre: "Tutoría", inicio: "09:25 PM", fin: "10:10 PM", profe: "cesar alberto" } 
+         { id: "J1", nombre: "Taller de leg info", inicio: "07:00 AM", fin: "08:40 AM", profe: "Aguilera" },
+        { id: "J2",nombre: "Ingles", inicio: "04:00 PM", fin: "05:30 PM", profe: "Nelly Villareal" }, 
+        { id: "J3", nombre: "Estructuras de Datos", inicio: "07:55 PM", fin: "09:25 PM", profe: "maistro2" }, 
+        { id: "J4", nombre: "Tutoría", inicio: "09:25 PM", fin: "10:10 PM", profe: "cesar alberto" } 
     ],
     5: [ 
-        { id: "V1", nombre: "Taller de leg info", inicio: "07:50 AM", fin: "08:40 AM", profe: "Carmina" },
+        { id: "V1", nombre: "Taller de leg info", inicio: "07:50 AM", fin: "08:40 AM", profe: "Aguilera" },
         { id: "V2", nombre: "Redes de computadoras", inicio: "08:40 AM", fin: "10:20 AM", profe: "Javier marlequin" },
         { id: "V3", nombre: "Costos Empresariales", inicio: "06:15 PM", fin: "07:00 PM", profe: "Jairo Cristopher" }, 
-        { id: "V4",  nombre: "Estructuras de Datos", inicio: "07:55 PM", fin: "09:25 PM", profe: "Nuevo 2" }, 
+        { id: "V4",  nombre: "Estructuras de Datos", inicio: "08:40 PM", fin: "10:20 PM", profe: "maistro2" }, 
          
     ]
 };
